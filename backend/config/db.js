@@ -41,19 +41,20 @@
 const mongoose = require('mongoose');
 
 async function connectDB() {
-    try {
-        // Log connection attempts
-        console.log('Attempting to connect to MongoDB...');
+  try {
+    // Log connection attempts
+    console.log('Attempting to connect to MongoDB...');
 
-        await mongoose.connect(process.env.MONGODB_URI, {
-            serverSelectionTimeoutMS: 5000, // Adjust timeout if needed
-        });
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000, // Adjust timeout if needed
+      // No need for useNewUrlParser and useUnifiedTopology options
+    });
 
-        console.log('Connected to MongoDB successfully.');
-    } catch (err) {
-        console.error('Error connecting to MongoDB:', err.message);
-        process.exit(1); // Exit if connection fails
-    }
+    console.log('Connected to MongoDB successfully.');
+  } catch (err) {
+    console.error('Error connecting to MongoDB:', err.message);
+    process.exit(1); // Exit if connection fails
+  }
 }
 
 // Enable Mongoose debugging
