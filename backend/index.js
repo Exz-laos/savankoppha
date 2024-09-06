@@ -58,6 +58,8 @@
 //         console.log('Server is running on port ' + PORT);
 //     });
 // });
+
+
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -72,6 +74,7 @@ app.use(express.json({ limit: '10mb' }));
 
 app.use(cors({
     origin: 'https://savankoppha-x.vercel.app',
+    method: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
 
