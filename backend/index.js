@@ -73,10 +73,11 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 
 app.use(cors({
-    origin: 'https://savankoppha-x.vercel.app',
-    method: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+    origin: 'https://savankoppha-x.vercel.app', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // List allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // List allowed headers
+    credentials: true, // Allow cookies or authentication information
+  }));
 
 app.use(cookieParser());
 
