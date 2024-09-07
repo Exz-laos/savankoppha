@@ -81,7 +81,7 @@ app.use(cors({
 
 app.use(cookieParser());
 
-app.use("/api", router);
+app.use("api", router);
 
 const PORT = process.env.PORT || 8080;
 
