@@ -99,10 +99,6 @@ const SummaryApi ={
         url: (orderId, status) => `${backendDomain}/api/orders/${orderId}/${status}`,
         method: 'PUT'
     },
-
-
-
-
     
 }
 

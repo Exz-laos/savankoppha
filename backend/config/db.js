@@ -1,18 +1,18 @@
-// // const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
-// // async function connectDB() {
+async function connectDB() {
 
-// //     try{
-// //         await mongoose.connect(process.env.MONGODB_URI)
-// //     }catch(err){
-// //         console.log(err)
-// //     }
-// // }
+    try{
+        await mongoose.connect(process.env.MONGODB_URI)
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
 
-// // module.exports = connectDB
+module.exports = connectDB
 
 // const mongoose = require('mongoose');
 
@@ -38,26 +38,26 @@
 // mongoose.set('debug', true);
 
 // module.exports = connectDB;
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-async function connectDB() {
-  try {
-    // Log connection attempts
-    console.log('Attempting to connect to MongoDB...');
+// async function connectDB() {
+//   try {
+//     // Log connection attempts
+//     console.log('Attempting to connect to MongoDB...');
 
-    await mongoose.connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 5000, // Adjust timeout if needed
-      // No need for useNewUrlParser and useUnifiedTopology options
-    });
+//     await mongoose.connect(process.env.MONGODB_URI, {
+//       serverSelectionTimeoutMS: 5000, // Adjust timeout if needed
+//       // No need for useNewUrlParser and useUnifiedTopology options
+//     });
 
-    console.log('Connected to MongoDB successfully.');
-  } catch (err) {
-    console.error('Error connecting to MongoDB:', err.message);
-    process.exit(1); // Exit if connection fails
-  }
-}
+//     console.log('Connected to MongoDB successfully.');
+//   } catch (err) {
+//     console.error('Error connecting to MongoDB:', err.message);
+//     process.exit(1); // Exit if connection fails
+//   }
+// }
 
-// Enable Mongoose debugging
-mongoose.set('debug', true);
+// // Enable Mongoose debugging
+// mongoose.set('debug', true);
 
-module.exports = connectDB;
+// module.exports = connectDB;
